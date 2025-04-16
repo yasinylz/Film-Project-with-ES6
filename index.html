@@ -308,6 +308,63 @@
               
           
     </main>
+    <!-- index.html içine <body>'nin sonuna ya da <head>'e ekleyebilirsin -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MDNhOTJlMDcxMmNlZGNhMWY1Y2VkMGRiNzNhZmQ1OCIsIm5iZiI6MTc0NDg0MjE0Ny43MDUsInN1YiI6IjY4MDAyZGEzZDY0NWU0MWUwOTk5ODFlZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.viBqQKQbFLVMnkngXbFKWQjk1sGB79Tr3Q1iS92NLoA';
+
+    fetch('https://api.themoviedb.org/3/search/movie?query=Batman', {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${apiKey}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('🎬 Batman Movies:', data.results);
+        showMovies(data.results);
+      })
+      .catch(err => console.error('❌ Hata:', err));
+
+    function showMovies(movies) {
+      const container = document.createElement('div');
+      container.style.display = 'flex';
+      container.style.overflowX = 'auto';
+      container.style.gap = '20px';
+      container.style.padding = '20px';
+      container.style.background = '#111';
+      container.style.color = '#fff';
+
+      movies.forEach(movie => {
+        const card = document.createElement('div');
+        card.style.minWidth = '200px';
+        card.style.background = '#222';
+        card.style.borderRadius = '10px';
+        card.style.padding = '10px';
+        card.style.textAlign = 'center';
+
+        const img = document.createElement('img');
+        img.src = movie.poster_path
+          ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+          : 'https://via.placeholder.com/200x300?text=No+Image';
+        img.style.width = '100%';
+        img.style.borderRadius = '10px';
+
+        const title = document.createElement('h4');
+        title.textContent = movie.title;
+        title.style.marginTop = '10px';
+
+        card.appendChild(img);
+        card.appendChild(title);
+        container.appendChild(card);
+      });
+
+      document.body.appendChild(container);
+    }
+  });
+</script>
+
     <footer class="bg-light text-dark text-center py-4 mt-5">
         
             <div class="container">
