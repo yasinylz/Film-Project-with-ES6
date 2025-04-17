@@ -1,5 +1,5 @@
 const API_KEY_OMDB = "7baced43"; // OMDb için
-const API_KEY_YOUTUBE = "AIzaSyDPzRumRrXMw3k0dZK04_O7J5t5rsXY5w8"; // YouTube için
+const API_KEY_YOUTUBE = ""; // YouTube için
 
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
