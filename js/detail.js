@@ -1,4 +1,4 @@
-const API_KEY_OMDB = "7baced43"; // OMDb için
+const API_KEY_OMDB = ""; // OMDb için
 const API_KEY_YOUTUBE = ""; // YouTube için
 
 const urlParams = new URLSearchParams(window.location.search);
