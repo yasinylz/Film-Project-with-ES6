@@ -1,4 +1,4 @@
-const API_KEY = "7baced43"; // Bu key çalışmıyorsa değiştir paşam
+const API_KEY = ""; // Bu key çalışmıyorsa değiştir paşam
 
 const movies = {
   "Son Çıkanlar": ["tt1745960", "tt1160419", "tt1431045"],
