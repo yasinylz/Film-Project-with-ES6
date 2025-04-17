@@ -35,10 +35,11 @@
           >
             <ul class="navbar-nav flex-row gap-4">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Anasayfa</a>
+                <a class="nav-link" href="./index.html">Anasayfa</a>
+
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Filmler</a>
+                <a class="nav-link" href="./docs/films.html">Filmler</a>
               </li>
             </ul>
           </div>
@@ -68,19 +69,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Mobilde ortada arama -->
-          <form
-            class="d-flex d-lg-none position-absolute start-50 translate-middle-x"
-            role="search"
-            style="width: 50%"
-          >
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Film ara..."
-              aria-label="Search"
-            />
-          </form>
+        
         </div>
       </nav>
 
@@ -103,10 +92,10 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Anasayfa</a>
+              <a class="nav-link" href="./index.html">Anasayfa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Filmler</a>
+              <a class="nav-link" href="./docs/films.html">Filmler</a>
             </li>
           </ul>
         </div>
@@ -181,190 +170,15 @@
           </script>
           
           
-            <div id="film-sections"></div>
-        
-            <script>
-                const filmList = [
-                  {
-                    kategori: "Önce Çıkanlar",
-                    title: "Inception",
-                    description: "Zihinlerin içine yolculuk eden bir ekip...",
-                    src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_960_720.jpg"
-                  },
-                  {
-                    kategori: "Önce Çıkanlar",
-                    title: "Interstellar",
-                    description: "Zaman ve uzay ötesi bir görev...",
-                    src: "https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg"
-                  },
-                  {
-                    kategori: "Bilim Kurgu",
-                    title: "The Matrix",
-                    description: "Gerçeklik mi, illüzyon mu?",
-                    src: "https://cdn.pixabay.com/photo/2020/02/06/14/14/car-4825084_1280.jpg"
-                  },
-                  {
-                    kategori: "Aksiyon",
-                    title: "The Dark Knight",
-                    description: "Batman efsanesi yeniden yazılıyor.",
-                    src: "https://cdn.pixabay.com/photo/2023/04/19/19/11/lake-7938396_1280.jpg"
-                  },
-                  {
-                    kategori: "Önce Çıkanlar",
-                    title: "Interstellar",
-                    description: "Zaman ve uzay ötesi bir görev...",
-                    src: "https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg"
-                  },
-                  {
-                    kategori: "Bilim Kurgu",
-                    title: "The Matrix",
-                    description: "Gerçeklik mi, illüzyon mu?",
-                    src: "https://cdn.pixabay.com/photo/2020/02/06/14/14/car-4825084_1280.jpg"
-                  },
-                  {
-                    kategori: "Aksiyon",
-                    title: "The Dark Knight",
-                    description: "Batman efsanesi yeniden yazılıyor.",
-                    src: "https://cdn.pixabay.com/photo/2023/04/19/19/11/lake-7938396_1280.jpg"
-                  },
-                  {
-                    kategori: "Önce Çıkanlar",
-                    title: "Interstellar",
-                    description: "Zaman ve uzay ötesi bir görev...",
-                    src: "https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg"
-                  },
-                  {
-                    kategori: "Bilim Kurgu",
-                    title: "The Matrix",
-                    description: "Gerçeklik mi, illüzyon mu?",
-                    src: "https://cdn.pixabay.com/photo/2020/02/06/14/14/car-4825084_1280.jpg"
-                  },
-                  {
-                    kategori: "Aksiyon",
-                    title: "The Dark Knight",
-                    description: "Batman efsanesi yeniden yazılıyor.",
-                    src: "https://cdn.pixabay.com/photo/2023/04/19/19/11/lake-7938396_1280.jpg"
-                  },
-                  {
-                    kategori: "Önce Çıkanlar",
-                    title: "Interstellar",
-                    description: "Zaman ve uzay ötesi bir görev...",
-                    src: "https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg"
-                  },
-                  {
-                    kategori: "Bilim Kurgu",
-                    title: "The Matrix",
-                    description: "Gerçeklik mi, illüzyon mu?",
-                    src: "https://cdn.pixabay.com/photo/2020/02/06/14/14/car-4825084_1280.jpg"
-                  },
-                  {
-                    kategori: "Aksiyon",
-                    title: "The Dark Knight",
-                    description: "Batman efsanesi yeniden yazılıyor.",
-                    src: "https://cdn.pixabay.com/photo/2023/04/19/19/11/lake-7938396_1280.jpg"
-                  }
-                ];
-              
-                const kategoriler = [...new Set(filmList.map(f => f.kategori))];
-                const section = document.getElementById("film-sections");
-              
-                kategoriler.forEach((kategori, index) => {
-                  const katFilmler = filmList.filter(f => f.kategori === kategori);
-                  const sliderId = `slider-${index}`;
-              
-                  const html = `
-                    <div class="slider-container">
-                      <h3 class="category-title">${kategori}</h3>
-                      <button class="arrow-btn arrow-left" onclick="scrollSlider('${sliderId}', -1)">&#8592;</button>
-                      <div id="${sliderId}" class="category-slider">
-                  
-                        ${katFilmler.map(film => `
-                          <div class="film-card">
-                            <img src="${film.src}" alt="${film.title}" />
-                            <div class="p-2">
-                              <h5>${film.title}</h5>
-                              <p class="small">${film.description}</p>
-                            </div>
-                          </div>
-                        `).join("")}
-                      </div>
-                      <button class="arrow-btn arrow-right" onclick="scrollSlider('${sliderId}', 1)">&#8594;</button>
-                    </div>
-                  `;
-              
-                  section.innerHTML += html;
-                });
-              
-                function scrollSlider(id, direction) {
-                  const slider = document.getElementById(id);
-                  const scrollAmount = 300;
-                  slider.scrollBy({
-                    left: scrollAmount * direction,
-                    behavior: 'smooth'
-                  });
-                }
-              </script>
-              
+  <div class="container py-5">
+    <h1 class="text-center mb-4">🎬 Film Listesi</h1>
+    <div id="movie-list" class="row g-4"></div>
+  </div>
+             
               
           
     </main>
-    <!-- index.html içine <body>'nin sonuna ya da <head>'e ekleyebilirsin -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MDNhOTJlMDcxMmNlZGNhMWY1Y2VkMGRiNzNhZmQ1OCIsIm5iZiI6MTc0NDg0MjE0Ny43MDUsInN1YiI6IjY4MDAyZGEzZDY0NWU0MWUwOTk5ODFlZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.viBqQKQbFLVMnkngXbFKWQjk1sGB79Tr3Q1iS92NLoA';
-
-    fetch('https://api.themoviedb.org/3/search/movie?query=Batman', {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${apiKey}`
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('🎬 Batman Movies:', data.results);
-        showMovies(data.results);
-      })
-      .catch(err => console.error('❌ Hata:', err));
-
-    function showMovies(movies) {
-      const container = document.createElement('div');
-      container.style.display = 'flex';
-      container.style.overflowX = 'auto';
-      container.style.gap = '20px';
-      container.style.padding = '20px';
-      container.style.background = '#111';
-      container.style.color = '#fff';
-
-      movies.forEach(movie => {
-        const card = document.createElement('div');
-        card.style.minWidth = '200px';
-        card.style.background = '#222';
-        card.style.borderRadius = '10px';
-        card.style.padding = '10px';
-        card.style.textAlign = 'center';
-
-        const img = document.createElement('img');
-        img.src = movie.poster_path
-          ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-          : 'https://via.placeholder.com/200x300?text=No+Image';
-        img.style.width = '100%';
-        img.style.borderRadius = '10px';
-
-        const title = document.createElement('h4');
-        title.textContent = movie.title;
-        title.style.marginTop = '10px';
-
-        card.appendChild(img);
-        card.appendChild(title);
-        container.appendChild(card);
-      });
-
-      document.body.appendChild(container);
-    }
-  });
-</script>
-
+    
     <footer class="bg-light text-dark text-center py-4 mt-5">
         
             <div class="container">
@@ -388,5 +202,8 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <!-- index.html içine <body>'nin sonuna ya da <head>'e ekleyebilirsin -->
+
+<script src="./js//main.js"></script>
   </body>
 </html>

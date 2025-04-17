@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Film Detay</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .poster {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    .video-player {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .desc {
+      font-size: 16px;
+      color: #555;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container mt-4 text-white">
+        <h2 id="title"></h2>
+        <p><strong>Yıl:</strong> <span id="year"></span></p>
+        <p><strong>Yönetmen:</strong> <span id="director"></span></p>
+        <p><strong>Oyuncular:</strong> <span id="actors"></span></p>
+        <p><strong>Konu:</strong> <span id="plot"></span></p>
+        <img id="poster" src="" class="img-fluid mb-3" alt="Poster">
+        <div id="video-container" class="mt-4"></div>
+      </div>
+
+  <script src="../js//detail.js"></script>
+</body>
+</html>
