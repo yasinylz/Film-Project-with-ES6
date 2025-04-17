@@ -1,6 +1,7 @@
 # Filmify - Basit Film İstesi Uygulaması
 
 Filmify, kullanıcıların popüler filmleri arayabileceği ve detaylarına ulaşabileceği basit ama kullanışlı bir uygulamadır. Kullanıcılar, film listesine göz atabilir, film fragmanlarını izleyebilir ve detaylı bilgi alabilirler. Ayrıca, web sayfasının yönlendirilmesi kullanıcıya bırakılmış olup, basit bir kullanıcı deneyimi sunar.
+![Filmify Ekran Görüntüsü](https://github.com/yasinylz/Filmify/raw/main/path-to-your-image.png)
 
 ## Özellikler
 
