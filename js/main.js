@@ -30,7 +30,7 @@ if (movieList) {
                 <div class="card-body">
                   <h5 class="card-title">${movie.Title}</h5>
                   <p class="card-text">${movie.Plot?.substring(0, 100)}...</p>
-                  <a href="../docs/detail.html?id=${movie.imdbID}" class="btn btn-outline-light btn-sm">Detay</a>
+                  <a href="../file/detail.html?id=${movie.imdbID}" class="btn btn-outline-light btn-sm">Detay</a>
                 </div>
               </div>
             </div>
